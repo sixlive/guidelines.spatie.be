@@ -300,6 +300,13 @@ Route names must use camelCase.
 Route::get('open-source', 'OpenSourceController@index')->name('openSource');
 ```
 
+Route parameters must use camelCase.
+
+```php
+Route::get('resource/{resourceUuid}', 'ResourceController@index');
+```
+
+
 ```html
 <a href="{{ route('openSource') }}">
     Open Source
@@ -316,12 +323,6 @@ Route::get('open-source', 'OpenSourceController@index')->middleware('openSource'
 // bad: http verbs not easily scannable
 Route::name('home')->get('/', 'HomeController@index');
 Route::middleware('openSource')->get('OpenSourceController@index');
-```
-
-Route parameters should use camelCase.
-
-```php
-Route::get('news/{newsItem}', 'NewsItemsController@index');
 ```
 
 ## Controllers
